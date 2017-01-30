@@ -5,6 +5,7 @@
 
 function runAndReturnStatus {
     "$@"
+    echo
     echo "${@}..."
     echo
     local status=$?
