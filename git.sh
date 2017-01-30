@@ -51,5 +51,5 @@ else
   echo "FAIL: git push pi master"; exit 1
 fi
 
-echo
+# fin
 echo "Succes: all done."; echo "-------"; echo
