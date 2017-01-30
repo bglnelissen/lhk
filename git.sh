@@ -36,7 +36,7 @@ else
 fi
 
 # git add
-git add
+git add *
 if [ 0 == $? ]; then
   echo "Succes: git add *"; echo "-------"; echo
   git commit -m "$commitmessage"
