@@ -2,16 +2,6 @@
 # b. nelissen
 
 # easy GIT upload script for KoekoekPi
-
-function exitcode {
-    "$@"
-    local status=$?
-    if [ $status -ne 0 ]; then
-        echo "error with $1" >&2
-    fi
-    return $status
-}
-
 commitmessage="$@"
 
 while [[ "" == "$commitmessage" ]]; do
@@ -60,3 +50,6 @@ if [ 0 == $? ]; then
 else
   echo "FAIL: git push pi master"; exit 1
 fi
+
+echo
+echo "Succes: all done."; echo "-------"; echo
