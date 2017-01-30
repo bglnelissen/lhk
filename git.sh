@@ -45,12 +45,12 @@ else
 fi
 
 # git commit
-git commit -m "$commitmessage"
+git commit -a -m "$commitmessage"
 if [ 0 == $? ]; then
-  echo "Succes: git commit -m "$commitmessage""; echo "-------"; echo
+  echo "Succes: git commit -a -m "$commitmessage""; echo "-------"; echo
   git push pi master
 else
-  echo "FAIL: git commit -m "$commitmessage"";
+  echo "FAIL: git commit -a -m "$commitmessage"";
 fi
 
 # git push
