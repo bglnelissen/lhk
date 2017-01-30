@@ -23,7 +23,7 @@ while [[ "" == "$commitmessage" ]]; do
 done
 
 
-runAndReturnStatus git status
-runAndReturnStatus git add *
-runAndReturnStatus git commit -m "$commitmessage"
-runAndReturnStatus git push --verbose pi master
+echo $(runAndReturnStatus git status)
+echo $(runAndReturnStatus git add *)
+echo $(runAndReturnStatus git commit -m "$commitmessage")
+echo $(runAndReturnStatus git push pi master)
