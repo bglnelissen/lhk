@@ -3,6 +3,15 @@
 
 # easy GIT upload script for KoekoekPi
 
+function mytest {
+    "$@"
+    local status=$?
+    if [ $status -ne 0 ]; then
+        echo "error with $1" >&2
+    fi
+    return $status
+}
+
 commitmessage="$@"
 
 while [[ "" == "$commitmessage" ]]; do
@@ -10,14 +19,7 @@ while [[ "" == "$commitmessage" ]]; do
 done
 
 
-git status
-gsexit=$?
-
-if [ 0 != $gsexit ]; then
-  echo "Problems with git, initialized?"
-else
-  # git should be fine
-  git add * && \
-  git commit -m "$commitmessage" && \
-  git push pi master
-fi
+mytest git status
+mytest git add *
+mytest git commit -m "$commitmessage"
+mytest git push pi master
