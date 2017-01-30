@@ -36,22 +36,25 @@ else
 fi
 
 # git add
+git add
 if [ 0 == $? ]; then
   echo "Succes: git add *"; echo "-------"; echo
   git commit -m "$commitmessage"
 else
-  echo "FAIL:git add *"; exit 1
+  echo "FAIL: git add *"; exit 1
 fi
 
 # git commit
+git commit -m "$commitmessage"
 if [ 0 == $? ]; then
   echo "Succes: git commit -m "$commitmessage""; echo "-------"; echo
   git push pi master
 else
-  echo "FAIL:git commit -m "$commitmessage""; exit 1
+  echo "FAIL: git commit -m "$commitmessage""; exit 1
 fi
 
 # git push
+git push pi master
 if [ 0 == $? ]; then
   echo "Succes: git push pi master"; echo "-------"; echo
 else
