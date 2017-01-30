@@ -1,4 +1,4 @@
-  .insert textarea, .insert input {
+  .insert textarea, .insert input, .answers input{
     padding: 10px 0px;
     margin: 10px 0px;
     font-family: sans-serif;
@@ -18,7 +18,7 @@
     display:inline-block;
     width:75%;
   }
-  .insert .origin {
+  .insert .origin, .insert select {
     display:block;
     width:25%;
     margin-right: 1em;
@@ -29,7 +29,7 @@
     display: inline;
     width: unset;
   }
-  .insert input[type="submit"]{
+  .insert input[type="submit"], .answers input[type="submit"] {
     width: 25%;
     float: right;
   }
@@ -42,18 +42,37 @@
     border: solid 1px #707070;
     box-shadow: 0 0 5px 1px #969696;
   }
-
-  .insert input[type="radio"] {
+  .insert input[type="radio"], .answer input[type="radio"]  {
     display:none;
 }
-  .insert label {
+  .insert label, .answer label {
     display:inline-block;
     background-color:#ddd;
     color: #bbb;
     padding:4px 11px;
-    margin-left:1em;
+    margin:0em 1em;
 }
-.insert input[type="radio"]:checked + label {
+.insert input[type="radio"]:checked + label,
+.answer input[type="radio"]:checked + label,
+.insert input[type="submit"]:hover,.answer input[type="submit"]:hover,
+.insert label:hover, .answer label:hover{
     background-color:#7ED244;
     color: #353535;
 }
+.image {
+  display:block;
+  margin: auto;
+  width:80%;
+}
+.answers {
+  padding-top:1em;
+}
+  .answer text{
+    display: inline-block;
+    width:75%;
+    padding-left: 1em;
+    height:3em;
+  }
+  .answer label{
+    float: right;
+  }

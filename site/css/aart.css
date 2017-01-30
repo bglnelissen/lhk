@@ -1,0 +1,9 @@
+input[type="radio"].radioLabel {
+    display:none;
+}
+label {
+    display:inline-block;
+    background-color:#1085B8;
+    color: white;
+    padding:4px 11px;
+}
