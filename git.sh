@@ -44,14 +44,6 @@ else
 fi
 
 # git push
-git push
-if [ 0 == $? ]; then
-  echo "Succes: git push"; echo "-------"; echo
-else
-  echo "FAIL: git push"; exit 1
-fi
-
-# git push
 git push pi master
 if [ 0 == $? ]; then
   echo "Succes: git push pi master"; echo "-------"; echo
