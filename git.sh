@@ -3,7 +3,7 @@
 
 # easy GIT upload script for KoekoekPi
 
-function mytest {
+function runAndReturnStatus {
     "$@"
     local status=$?
     if [ $status -ne 0 ]; then
@@ -19,7 +19,7 @@ while [[ "" == "$commitmessage" ]]; do
 done
 
 
-mytest git status
-mytest git add *
-mytest git commit -m "$commitmessage"
-mytest git push pi master
+echo $(runAndReturnStatus git status)
+runAndReturnStatus git add *
+runAndReturnStatus git commit -m "$commitmessage"
+runAndReturnStatus git push pi master
