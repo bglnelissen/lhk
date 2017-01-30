@@ -25,14 +25,14 @@ else
   echo "FAIL: git status"; exit 1
 fi
 
-# git add
-git add *
-if [ 0 == $? ]; then
-  echo "Succes: git add *"; echo "-------"; echo
-  git commit -m "$commitmessage"
-else
-  echo "FAIL: git add *"; exit 1
-fi
+# # git add
+# git add *
+# if [ 0 == $? ]; then
+#   echo "Succes: git add *"; echo "-------"; echo
+#   git commit -m "$commitmessage"
+# else
+#   echo "FAIL: git add *"; exit 1
+# fi
 
 # git commit
 git commit -a -m "$commitmessage"
