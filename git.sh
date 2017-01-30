@@ -4,7 +4,7 @@
 # easy GIT upload script for KoekoekPi
 
 commitmessage="$@"
-
+echo "$commitmessage"
 while [[ "" == "$commitmessage" ]]; do
   read -e -p "Commit message: " commitmessage
 done
