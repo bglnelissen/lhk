@@ -5,7 +5,7 @@
 
 commitmessage="$@"
 
-while [[ -z "$commitmessage" ]]; do
+while [[ "" == "$commitmessage" ]]; do
   read -e -p "Commit message: " commitmessage
 done
 
