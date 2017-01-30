@@ -26,4 +26,4 @@ done
 runAndReturnStatus git status
 runAndReturnStatus git add *
 runAndReturnStatus git commit -m "$commitmessage"
-runAndReturnStatus git push pi master
+runAndReturnStatus git push --verbose pi master
