@@ -22,7 +22,7 @@ while [[ "" == "$commitmessage" ]]; do
 done
 
 
-echo $(runAndReturnStatus git status)
+runAndReturnStatus git status
 runAndReturnStatus git add *
 runAndReturnStatus git commit -m "$commitmessage"
 runAndReturnStatus git push pi master
