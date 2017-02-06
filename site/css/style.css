@@ -1,3 +1,31 @@
+/* Tooltip container */
+.tip {
+    position: relative;
+    display: inline-block;
+}
+
+/* Tooltip text */
+.tip .tiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    width:10em;
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    top: -0.5em;
+    left: 1em;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tip:hover .tiptext {
+    visibility: visible;
+}
+
   .insert textarea, .insert input, .answers input{
     padding: 10px 0px;
     margin: 10px 0px;
@@ -16,7 +44,7 @@
   }
   .insert .answer {
     display:inline-block;
-    width:75%;
+    width:70%;
   }
   .insert .origin, .insert select {
     display:block;
@@ -42,7 +70,7 @@
     border: solid 1px #707070;
     box-shadow: 0 0 5px 1px #969696;
   }
-  .insert input[type="radio"], .answer input[type="radio"]  {
+  .insert input[type="radio"], .answer input[type="radio"] {
     display:none;
 }
   .insert label, .answer label {
@@ -51,28 +79,56 @@
     color: #bbb;
     padding:4px 11px;
     margin:0em 1em;
+    width:4em;
+    text-align: center;
 }
 .insert input[type="radio"]:checked + label,
-.answer input[type="radio"]:checked + label,
-.insert input[type="submit"]:hover,.answer input[type="submit"]:hover,
-.insert label:hover, .answer label:hover{
+.insert input[type="submit"]:hover,
+.insert label:hover {
     background-color:#7ED244;
     color: #353535;
 }
-.image {
+.case .image {
   display:block;
   margin: auto;
   width:80%;
 }
+
 .answers {
   padding-top:1em;
 }
-  .answer text{
-    display: inline-block;
-    width:75%;
-    padding-left: 1em;
-    height:3em;
-  }
-  .answer label{
-    float: right;
-  }
+.answers input[type="radio"]:checked + label{
+    background-color:#7ED244;
+    color: #353535;
+}
+.answers text{
+  display: inline-block;
+  width:75%;
+  padding-left: 1em;
+  height:3em;
+}
+.answers label{
+  float: right;
+  border: solid 1px #E1D6C4;
+  color: #353535;
+}
+
+.answers .correct{
+  opacity: 0.3;
+  background-color:#7ED244;
+}
+.answer .incorrect{
+  opacity: 0.3;
+  background-color:#DC412C;
+}
+.answers .answered{
+  opacity: 1;
+}
+
+.question_navigation{
+  display: inline-block;
+  width: 100%;
+}
+.question_list{
+  font-size: 24%;
+}
