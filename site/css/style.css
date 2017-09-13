@@ -1,134 +1,217 @@
-/* Tooltip container */
-.tip {
-    position: relative;
-    display: inline-block;
+/* global */
+.right {
+  text-align: right;
+}
+.left {
+  text-align: left;
+}
+.debug {
+	font-size:70%;
+	color:red;
+	font-style: italic;
+	line-height: 1;
+	margin:0;
+	padding:0;
+}
+.warning {
+  border-top: 1px solid red;
+  font-style: italic;
+}
+a {
+	font-size: inherit;
+}
+small {
+	display:inline;
+	position:relative;
+	top:-0.1em;
+	font-size:0.6em;
 }
 
-/* Tooltip text */
-.tip .tiptext {
-    visibility: hidden;
-    width: 120px;
-    background-color: black;
-    color: #fff;
-    text-align: center;
-    padding: 5px 0;
-    border-radius: 6px;
-    width:10em;
-    /* Position the tooltip text */
-    position: absolute;
-    z-index: 1;
-    top: -0.5em;
-    left: 1em;
+/* menu */
+div.menu ul, div.menu li {
+	margin: 0;
+	padding: 0;
+}
+div.menu ul li {
+	font-size:0.8em;
+	display: inline;
+	margin-left: 1em;
+}
+div.menu ul li:first-child {
+	margin-left: 0em;
 }
 
-/* Show the tooltip text when you mouse over the tooltip container */
-.tip:hover .tiptext {
-    visibility: visible;
+/* login page */
+div.login {
+	display: block;
+	min-height:24em;
 }
 
-  .insert textarea, .insert input, .answers input{
-    padding: 10px 0px;
-    margin: 10px 0px;
-    font-family: sans-serif;
-    font-size: 18px;
-    appearance: none;
-    box-shadow: none;
-    border-radius: none;
-    border: solid 1px #E1D6C4;
-    transition: box-shadow 0.3s, border 0.3s;
-  }
-  .insert textarea {
-    display: block;
-    width:100%;
-    height: 10em;
-  }
-  .insert .answer {
-    display:inline-block;
-    width:70%;
-  }
-  .insert .origin, .insert select {
-    display:block;
-    width:25%;
-    margin-right: 1em;
-  }
-
-  .insert input[type="file"]{
-    border: none;
-    display: inline;
-    width: unset;
-  }
-  .insert input[type="submit"], .answers input[type="submit"] {
-    width: 25%;
-    float: right;
-  }
-  .insert .required {
-    border-left: solid 1px #DC412C;
-  }
-
-  .insert input[type="text"]:focus,
-  .insert input[type="text"].focus {
-    border: solid 1px #707070;
-    box-shadow: 0 0 5px 1px #969696;
-  }
-  .insert input[type="radio"], .answer input[type="radio"] {
-    display:none;
-}
-  .insert label, .answer label {
-    display:inline-block;
-    background-color:#ddd;
-    color: #bbb;
-    padding:4px 11px;
-    margin:0em 1em;
-    width:4em;
-    text-align: center;
-}
-.insert input[type="radio"]:checked + label,
-.insert input[type="submit"]:hover,
-.insert label:hover {
-    background-color:#7ED244;
-    color: #353535;
-}
-.case .image {
-  display:block;
+div.login form{
   margin: auto;
-  width:80%;
+  width:60%;
 }
 
-.answers {
-  padding-top:1em;
+div.login form input {
+  display: inline;
+	width:100%;
+	padding: 0.5em 0em; /* top/bottom & left/right */
+	margin: 0.5em 0em; /* top/bottom & left/right */
+	font-size: 18px;
 }
-.answers input[type="radio"]:checked + label{
-    background-color:#7ED244;
-    color: #353535;
-}
-.answers text{
-  display: inline-block;
-  width:75%;
-  padding-left: 1em;
-  height:3em;
-}
-.answers label{
+
+div.login input[type="submit"] {
   float: right;
   border: solid 1px #E1D6C4;
   color: #353535;
+  width:25%;
+  text-align: center;
+	font-size: 18px;
 }
 
-.answers .correct{
-  opacity: 0.3;
-  background-color:#7ED244;
+/* question page */
+div.question {
+	display: block;
+	min-height:24em;
 }
-.answer .incorrect{
-  opacity: 0.3;
-  background-color:#DC412C;
+div.question img.image {
+  display:block;
+  margin: auto;
+  width:90%;
 }
-.answers .answered{
-  opacity: 1;
+div.question div.answers {
+	margin: 1em 0em; /* top/bottom & left/right */
 }
-
-.question_navigation{
-  display: inline-block;
+div.question div.answers div.answer {
+	padding: 0.5em 0em; /* top/bottom & left/right */
+	height: 3em;
+}
+div.question div.answers div.answer text {
+	display: inline-block;
+	width:80%;
+}
+div.question div.answers div.answer input[type="radio"]{
+	display:none;
+}
+div.question div.answers div.answer label{
+	display:inline-block;
+  float: right;
+  border: solid 1px #E1D6C4;
+  color: #353535;
+  width:15%;
+	padding: 0.5em 0em; /* top/bottom & left/right */
+  text-align: center;
+}
+div.question div.answers form div.answer input[type="radio"]:checked + label{
+	background-color:#7ED244;
+	color: #353535;
+}
+div.question div.answers form div.answer label:hover{
+	background-color:#7ED244;
+	color: #353535;
+}
+div.question div.answers form input[type="submit"]{
+  float: right;
+  border: solid 1px #E1D6C4;
+  color: #353535;
+  width:25%;
+  text-align: center;
+  padding: 0.5em 0em; /* top/bottom & left/right */
+	margin: 0.5em 0em; /* top/bottom & left/right */
+	font-size: 18px;
+}
+	/* after answering */
+	div.question div.answers div.answer .correct{
+		opacity: 0.4;
+		background-color:#7ED244;
+	}
+	div.question div.answers div.answer .incorrect{
+		opacity: 0.4;
+		background-color:#DC412C;
+	}
+	div.question div.answers div.answer .answered{
+		opacity: 1;
+	}
+.question_navigation {
   width: 100%;
+  margin-top: 4em;
 }
-.question_list{
-  font-size: 24%;
+
+
+/* insert page */
+div.insert {
+	display: block;
+	min-height:24em;
+}
+div.insert form {
+	display: block;
+}
+div.insert form textarea {
+	display: block;
+	width:100%;
+	height: 10em;
+}
+div.insert form select {
+	width:25%;
+	margin-right: 1em;
+}
+div.insert form div.answer {
+	padding: 0.5em 0em; /* top/bottom & left/right */
+	height: 3em;
+}
+div.insert form input[type="submit"]{
+  float: right;
+  border: solid 1px #E1D6C4;
+  color: #353535;
+  width:25%;
+  text-align: center;
+  padding: 0.5em 0em; /* top/bottom & left/right */
+	margin: 0.5em 0em; /* top/bottom & left/right */
+	font-size: 18px;
+}
+div.insert form div.answer input[type="text"] {
+	display: inline-block;
+	width:80%;
+	padding: 0.5em 0em; /* top/bottom & left/right */
+	margin: 0.5em 0em; /* top/bottom & left/right */
+	font-size: 18px;
+}
+div.insert form div.answer input[type="radio"] {
+	display:none;
+}
+div.insert form div.answer label {
+	display:inline-block;
+	background-color:#ddd;
+	color: #bbb;
+	padding: 0.5em 0em; /* top/bottom & left/right */
+	margin:0;
+	width:15%;
+	text-align: center;
+}
+div.insert form input[type="radio"]:checked + label,
+div.insert form label:hover {
+	background-color:#7ED244;
+	color: #353535;
+}
+div.insert form .required {
+	border-left: solid 1px #DC412C;
+}
+
+/* Preferences */
+
+div.style form input{
+  color: #353535;
+}
+
+
+@media print {
+  body {
+    margin: 0;
+  }
+  * {
+    color: #000 !important;
+  }
+  div.menu, div.question_navigation, input[type="submit"] {
+  	display: none;
+  }
 }
